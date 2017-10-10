@@ -1,2 +1,3 @@
 # library
-Library
+Library (Delphi)
+Conjunto de classes para diversas finalidades
