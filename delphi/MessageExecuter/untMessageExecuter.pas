@@ -14,13 +14,11 @@ type
    TMessageExecuter = class(TInterfacedObject)
    public
       class procedure Executar<T: record >(const hwd: HWND; const msg: Cardinal; const prc: TMessageExecuterPrc<T> = nil;
-        const prcAfter: TMessageExecuterPrc<T> = nil); overload;
+         const prcAfter: TMessageExecuterPrc<T> = nil); overload;
 
       class procedure ExecutarPost<T: record >(const hwd: HWND; const msg: Cardinal; const prc: TMessageExecuterPrc<T> = nil); overload;
-
-      class procedure Executar(const hwd: HWND; const msg: Cardinal); overload;
-
       class procedure ExecutarPost(const hwd: HWND; const msg: Cardinal); overload;
+      class procedure Executar(const hwd: HWND; const msg: Cardinal); overload;
 
       class procedure Processar<T: record >(var msg: TMessage; const fnc: TMessageExecuterFnc<T>);
 
@@ -39,7 +37,7 @@ begin
 end;
 
 class procedure TMessageExecuter.Executar<T>(const hwd: HWND; const msg: Cardinal; const prc: TMessageExecuterPrc<T>;
-  const prcAfter: TMessageExecuterPrc<T>);
+   const prcAfter: TMessageExecuterPrc<T>);
 var
    rec: T;
 begin
